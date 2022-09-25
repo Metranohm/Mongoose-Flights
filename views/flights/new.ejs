@@ -4,11 +4,35 @@
 
 <main>
   <h1><%= title %></h1>
-  <form id="new-form" action="" method="">
-    <label for="title-input">Title:</label>
-    <input type="text" name="title" id="title-input">
-    <label for="release-year-input">Release Year:</label>
-    <input type="text" name="releaseYear" id="release-year-input">
+    <form id="new-form" action="/flights" method="POST">
+      <label for="airline-input" value="">Airline</label>
+      <select name="airline" id="airline-select">
+        <option value="none" selected disabled hidden>Select an Option</option>
+        <option value="American">American</option>
+        <option value="Southwest">Southwest</option>
+        <option value="United">United</option>
+      </select>
+      <label for="airport-input">Airport</label>
+      <select name="airport" id="airport-select">
+        <option value="DEN-Denver">DEN-Denver</option>
+        <option value="AUS-Austin">AUS-Austin</option>
+        <option value="DFW-Dallas">DFW-Dallas</option>
+        <option value="LAX-Los Angeles">LAX-Los Angeles</option>
+        <option value="SAN-San Francisco">SAN-San Francisco</option>
+      </select>
+      <label for="flightNo-input">Flight Number</label>
+      <input type="number" id="flightNo" value=""
+       min="10" max="9999">
+       <label for="departs-input">Departure Date</label>
+      <input type='date' id="departs" value="10/25/2023">
+      <button type="submit">Add Flight</button>
+    </form>
+
+  <!-- <form id="new-form" action="/flights" method="POST">
+    <label for="airline-input">Title:</label>
+    <input type="text" name="title" id="airline-input">
+    <label for="airport-input">Release Year:</label>
+    <input type="text" name="airport" id="airport-input">
     <label for="mpaa-rating-select">MPAA Rating:</label>
     <select name="mpaaRating" id="mpaa-rating-select">
       <option value="G">G</option>
@@ -20,8 +44,8 @@
     <input type="text" name="cast" id="cast-input">
     <label for="now-showing-checkbox">Now Showing:</label>
     <input type="checkbox" name="nowShowing" id="now-showing-checkbox" checked>
-    <button type="submit">Add Movie</button>
-  </form>
+    <button type="submit">Add Flight</button>
+  </form> -->
 </main>
 
 <%- include("../partials/footer") %>

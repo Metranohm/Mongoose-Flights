@@ -5,7 +5,9 @@ import * as flightsCtrl from '../controllers/flights.js'
 // GET request flights/new
 router.get('/new', flightsCtrl.new)
 
+//POST /flights
+router.post('/', flightsCtrl.create)
 
 export {
-  router,
+  router
 }

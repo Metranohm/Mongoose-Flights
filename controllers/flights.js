@@ -2,11 +2,23 @@ import { Flight } from "../models/flight.js"
 
 function newFlight(req, res) {
   res.render('flights/new', {
-    title: 'Add Movie',
+    title: 'Add Flight',
   })
   console.log('look at me')
 }
 
+function create(req, res) {
+  Flight.create(req.body.airline)
+    .then(flight => {
+      res.redirect('/flights')
+    })
+    .catch(err => {
+      console.log(err)
+      res.redirect('/')
+    })
+}
+
 export {
-  newFlight as new
+  newFlight as new,
+  create
 }
