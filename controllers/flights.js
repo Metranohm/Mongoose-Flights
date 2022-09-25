@@ -1,7 +1,10 @@
 import { Flight } from "../models/flight.js"
 
 function newFlight(req, res) {
-console.log('its firing')
+  res.render('flights/new', {
+    title: 'Add Movie',
+  })
+  console.log('look at me')
 }
 
 export {
