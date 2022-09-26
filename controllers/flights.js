@@ -14,7 +14,7 @@ function create(req, res) {
     })
     .catch(err => {
       console.log(err)
-      res.redirect('/')
+      res.redirect('/flights/new')
     })
 }
 
