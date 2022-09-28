@@ -5,6 +5,7 @@ import path from 'path'
 import { fileURLToPath } from 'url'
 import logger from 'morgan'
 import methodOverride from 'method-override'
+import { router as mealsRouter } from './routes/meals.js'
 import('./config/database.js')
 
 // import routers
@@ -35,6 +36,7 @@ app.use(methodOverride('_method'))
 // mounted routers
 app.use('/', indexRouter)
 app.use('/flights', flightsRouter)
+app.use('/meals', mealsRouter)
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

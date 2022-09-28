@@ -1,4 +1,5 @@
 import { Flight } from "../models/flight.js"
+import { Meal } from '../models/meal.js'
 
 function newFlight(req, res) {
   res.render("flights/new", {
@@ -31,10 +32,13 @@ function index(req, res) {
 
 function show(req, res) {
   Flight.findById(req.params.id)
+  .populate('food')
   .then(flight => {
-    res.render("flights/show", {
-      title: "Flight Detail",
-      flight: flight,
+    Meal.find({_id: {$nin: flight.food}})
+    .then(meals => {
+      res.render("flights/show", {
+        title: "Flight Detail",
+        flight: flight,
     })
   })
   .catch(err => {
