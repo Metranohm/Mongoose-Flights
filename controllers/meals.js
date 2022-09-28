@@ -1,6 +1,7 @@
 import { Meal } from '../models/meal.js'
 
 function newMeal(req, res) {
+  console.log('******NEWMEAL NEWMEAL *******')
   Meal.find({})
   .then(meals => {
     res.render('meals/new', {
@@ -11,6 +12,7 @@ function newMeal(req, res) {
 }
 
 function create(req, res) {
+  console.log('******CREATEMEAL *******')
   Meal.create(req.body)
   .then(meal => { 
     res.redirect('/meals/new')

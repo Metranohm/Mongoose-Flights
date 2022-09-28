@@ -5,12 +5,12 @@ import path from 'path'
 import { fileURLToPath } from 'url'
 import logger from 'morgan'
 import methodOverride from 'method-override'
-import { router as mealsRouter } from './routes/meals.js'
 import('./config/database.js')
 
 // import routers
 import { router as indexRouter } from './routes/index.js'
 import { router as flightsRouter } from './routes/flights.js'
+import { router as mealsRouter } from './routes/meals.js'
 
 // set up app
 const app = express()
